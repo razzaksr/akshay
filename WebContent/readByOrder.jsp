@@ -14,6 +14,11 @@ if(m!=null){%>
 <%} %>
 <form action="fetch" method="post">
 <input type="text" name="number"><br><br>
+OR
+<input type="text" name="tech" placeholder="Read by technology"><br><br>
+OR
+<input type="text" name="start" placeholder="Start date">
+<input type="text" name="end" placeholder="End date"><br><br>
 <input type="submit" value="Read">
 </form>
 </body>
