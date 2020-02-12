@@ -24,6 +24,7 @@ if(m!=null){%>
 <td><%=pro.getProdeadline() %></td><td><%=pro.getProtech() %></td>
 <td><%=pro.getPromem() %></td><td><%=pro.getProstatus() %></td>
 <td><a href="downs.jsp?no=<%=pro.getPronum()%>">Download Requirement</a></td>
+<td><a href="Up?no=<%=pro.getPronum()%>">Edit</a></td>
 </tr>
 <%} %>
 </table>
