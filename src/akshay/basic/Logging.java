@@ -5,9 +5,11 @@ import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Logging
@@ -39,10 +41,14 @@ public class Logging extends HttpServlet {
 		// TODO Auto-generated method stub
 		String us=request.getParameter("user");
 		String ps=request.getParameter("pass");
+		HttpSession ses=request.getSession();
 		if(us.equalsIgnoreCase("akshay")&&ps.equalsIgnoreCase("aravind"))
 		{
 			RequestDispatcher dispatch=request.getRequestDispatcher("home.jsp");
-			request.setAttribute("who", us);
+			ses.setAttribute("who", us);
+			Cookie cook1=new Cookie("akshay", "www.akshayproject.in");
+			Cookie cook2=new Cookie("fb", "www.facebook.in");
+			response.addCookie(cook1);response.addCookie(cook2);
 			dispatch.forward(request, response);
 		}
 		else

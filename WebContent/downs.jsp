@@ -15,6 +15,13 @@
 <title>Downloading</title>
 </head>
 <body>
+<%
+response.addHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+response.addHeader("Pragma", "no-cache");
+response.addHeader("Expiry", "0");
+String got=(String)session.getAttribute("who"); 
+if(got!=null){%>
+<h1>Welcome to home............<%=got %></h1>
 <%int q=Integer.parseInt(request.getParameter("no")); 
 try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -50,5 +57,8 @@ try {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}%>
+<h3><a href="home.jsp">Home</a></h3>
+<h3><a href="logout.jsp">Logout</a></h3>
+<%}else{response.sendRedirect("index.jsp");} %>
 </body>
 </html>

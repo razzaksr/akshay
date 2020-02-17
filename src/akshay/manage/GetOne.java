@@ -70,6 +70,11 @@ public class GetOne extends HttpServlet {
 				ps=con.prepareStatement(qry);
 				ps.setString(1, tech);
 			}
+			else if (id.equals("")&&tech.equals("")&&sdate.equals("")&&edate.equals(""))
+			{
+				String qry="select * from projects";
+				ps=con.prepareStatement(qry);
+			}
 			ResultSet rs=ps.executeQuery();
 			ArrayList<Projects> many=new ArrayList<Projects>();
 			Projects pro=null;

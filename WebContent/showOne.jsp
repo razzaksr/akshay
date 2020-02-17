@@ -10,6 +10,13 @@
 </head>
 <body>
 <%
+response.addHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+response.addHeader("Pragma", "no-cache");
+response.addHeader("Expiry", "0");
+String got=(String)session.getAttribute("who"); 
+if(got!=null){%>
+<h1>Welcome to home............<%=got %></h1>
+<%
 String m=(String)request.getAttribute("msg");
 if(m!=null){%>
 <h5 style="color:red;"><%=m %></h5>
@@ -25,8 +32,12 @@ if(m!=null){%>
 <td><%=pro.getPromem() %></td><td><%=pro.getProstatus() %></td>
 <td><a href="downs.jsp?no=<%=pro.getPronum()%>">Download Requirement</a></td>
 <td><a href="Up?no=<%=pro.getPronum()%>">Edit</a></td>
+<td><a href="Del?no=<%=pro.getPronum()%>">Delete</a></td>
 </tr>
 <%} %>
 </table>
+<h3><a href="home.jsp">Home</a></h3>
+<h3><a href="logout.jsp">Logout</a></h3>
+<%}else{response.sendRedirect("index.jsp");} %>
 </body>
 </html>
