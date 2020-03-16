@@ -3,7 +3,9 @@ package akshay.basic;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +17,7 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class Logging
  */
 @WebServlet("/sign")
+@WebInitParam(name="hai",value="How you doing?")
 public class Logging extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -39,6 +42,7 @@ public class Logging extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		//ServletConfig config;
 		String us=request.getParameter("user");
 		String ps=request.getParameter("pass");
 		HttpSession ses=request.getSession();

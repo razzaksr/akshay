@@ -15,6 +15,8 @@ String got=(String)session.getAttribute("who");
 if(got!=null){%>
 <h1>Welcome to home............<%=got %></h1>
 <%String m=(String)request.getAttribute("msg");
+out.println("<h1>Welcome to home............"+config.getInitParameter("hai")+"</h1>");
+this.log("Adding new on visited");
 if(m!=null){%>
 <h5 style="color:red;"><%=m %></h5>
 <%} %>

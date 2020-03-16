@@ -15,10 +15,13 @@ String got=(String)session.getAttribute("who");
 if(got!=null){
 Cookie[] coo=request.getCookies();
 for(Cookie temp:coo)
-{%>
-<%=temp.getName() %><%=temp.getValue() %>	
-<% }%>
-<h1>Welcome to home............<%=got %></h1>
+{
+out.println(temp.getName()+" "+temp.getValue());	
+}
+this.log("Home page visited");
+out.println("<h1>Welcome to home............"+got+"</h1>");
+out.println("<h1>Welcome to home............"+config.getInitParameter("hai")+"</h1>");
+out.println("<h1>Welcome to home............"+application.getInitParameter("bye")+"</h1>");%>
 <h3><a href="newSign.jsp">Enrolling New Project</a></h3>
 <h3><a href="readByOrder.jsp">Extract Project(s) Information</a></h3>
 <h3><a href="logout.jsp">Logout</a></h3>

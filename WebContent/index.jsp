@@ -9,9 +9,10 @@
 <body>
 <%
 String m=(String)request.getAttribute("msg");
-if(m!=null){%>
-<h5 style="color:red;"><%=m %></h5>
-<%} %>
+if(m!=null){
+out.println("<h5 style='color:red;'>"+m+"</h5>");
+} 
+this.log("Login page visited");%>
 <form action="sign" method="post">
 <input type="text" name="user" placeholder="UserName"><br><br>
 <input type="password" name="pass" placeholder="Password"><br><br>
