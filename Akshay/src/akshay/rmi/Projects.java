@@ -1,20 +1,15 @@
-package akshay.manage;
+package akshay.rmi;
 
-import java.io.InputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-@XmlRootElement
+
 public class Projects 
 {
 	private Integer pronum,promem;
 	private String proname,proclient,protech,prostatus;
 	private Date prokickstart,prodeadline;
-	private InputStream proreq;
 	
 	public Projects(Integer pronum, Integer promem, String proname, String proclient, String protech, String prostatus,
 			String prokickstart, String prodeadline) {
@@ -42,68 +37,54 @@ public class Projects
 	public String toString() {
 		return "Projects [pronum=" + pronum + ", promem=" + promem + ", proname=" + proname + ", proclient=" + proclient
 				+ ", protech=" + protech + ", prostatus=" + prostatus + ", prokickstart=" + prokickstart
-				+ ", prodeadline=" + prodeadline + ", proreq=" + proreq + "]";
+				+ ", prodeadline=" + prodeadline + "]";
 	}
 	public Integer getPronum() {
 		return pronum;
 	}
-	@XmlAttribute
 	public void setPronum(Integer pronum) {
 		this.pronum = pronum;
 	}
 	public Integer getPromem() {
 		return promem;
 	}
-	@XmlElement
 	public void setPromem(Integer promem) {
 		this.promem = promem;
 	}
 	public String getProname() {
 		return proname;
 	}
-	@XmlElement
 	public void setProname(String proname) {
 		this.proname = proname;
 	}
 	public String getProclient() {
 		return proclient;
 	}
-	@XmlElement
 	public void setProclient(String proclient) {
 		this.proclient = proclient;
 	}
 	public String getProtech() {
 		return protech;
 	}
-	@XmlElement
 	public void setProtech(String protech) {
 		this.protech = protech;
 	}
 	public String getProstatus() {
 		return prostatus;
 	}
-	@XmlElement
 	public void setProstatus(String prostatus) {
 		this.prostatus = prostatus;
 	}
 	public Date getProkickstart() {
 		return prokickstart;
 	}
-	@XmlElement
 	public void setProkickstart(Date prokickstart) {
 		this.prokickstart = prokickstart;
 	}
 	public Date getProdeadline() {
 		return prodeadline;
 	}
-	@XmlElement
 	public void setProdeadline(Date prodeadline) {
 		this.prodeadline = prodeadline;
-	}
-	public InputStream getProreq() {
-		return proreq;
-	}
-	public void setProreq(InputStream proreq) {
-		this.proreq = proreq;
 	}
 }

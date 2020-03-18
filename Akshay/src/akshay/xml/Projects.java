@@ -1,6 +1,5 @@
-package akshay.manage;
+package akshay.xml;
 
-import java.io.InputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,7 +13,6 @@ public class Projects
 	private Integer pronum,promem;
 	private String proname,proclient,protech,prostatus;
 	private Date prokickstart,prodeadline;
-	private InputStream proreq;
 	
 	public Projects(Integer pronum, Integer promem, String proname, String proclient, String protech, String prostatus,
 			String prokickstart, String prodeadline) {
@@ -42,7 +40,7 @@ public class Projects
 	public String toString() {
 		return "Projects [pronum=" + pronum + ", promem=" + promem + ", proname=" + proname + ", proclient=" + proclient
 				+ ", protech=" + protech + ", prostatus=" + prostatus + ", prokickstart=" + prokickstart
-				+ ", prodeadline=" + prodeadline + ", proreq=" + proreq + "]";
+				+ ", prodeadline=" + prodeadline + "]";
 	}
 	public Integer getPronum() {
 		return pronum;
@@ -99,11 +97,5 @@ public class Projects
 	@XmlElement
 	public void setProdeadline(Date prodeadline) {
 		this.prodeadline = prodeadline;
-	}
-	public InputStream getProreq() {
-		return proreq;
-	}
-	public void setProreq(InputStream proreq) {
-		this.proreq = proreq;
 	}
 }
